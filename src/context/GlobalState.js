@@ -13,9 +13,10 @@ export const GlobalProvider = ({ children }) => {
   
     //Función que nos traé los personajes de ricky morty
     const getCharacters = async () => {
-      const res = await axios.get("https://rickandmortyapi.com/api/character");
+      const res = await axios.get("https://api.nytimes.com/svc/topstories/v2/food.json?api-key=VLslSANKe2fXbThErESGpBMb6TUUV1fi");
 
       //dispachamos la acción que hará que cambie el estado de los personajes
+     
       dispatch({
         type: "GET_CHARACTERS",
         payload: res.data.results,

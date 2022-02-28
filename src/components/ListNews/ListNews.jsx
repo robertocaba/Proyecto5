@@ -7,13 +7,15 @@ const ListNews = () => {
   useEffect(() => {
     getCharacters();
   }, []);
+  console.log(listNews)
   const listNew = listNews.map((listNew) => {
-    return (
-      <div className="listNew" key={listNew.id}>
-        <h1>{listNew.Name}</h1>
-        <img src={listNew.image} />
-      </div>
-    );
+   return (
+     <div className="listNew" key={listNew._id}>
+       <h1>{listNew.title}</h1>
+       <img src={listNew.multimedia[0].url}/>
+       <h2>{listNew.abstract} </h2>
+     </div>
+   );
   });
   return <div className="listNews">{listNew}</div>;
 };
